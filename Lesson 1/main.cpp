@@ -14,6 +14,22 @@ public:
     string Company;
     int Age;
 
+//constructor - a special method that is called when an object is created.
+//Rules for constructors:
+//1. The constructor name must be the same as the class name
+//2. The constructor must have no return type (not even void)
+//3. The constructor is called when an object of a class is created
+//4. At a beginner level, contrcuctors should be public
+
+
+//if there is no data in the constructor, then the default constructor is called 
+//the default constructor is a constructor that takes no parameters
+
+    Employee(string name, string company, int age){
+        Name = name;
+        Company = company;
+        Age = age;
+    }
 
     void IntroduceYourself(){
         cout << "Name - " << Name << endl;
@@ -24,15 +40,11 @@ public:
 
 int main()
 {
-    Employee employee1;
-    employee1.Name = "AE";   
-    employee1.Company = "Icl";
-    employee1.Age = 18;
+    Employee employee1("AE", "Icl", 18);
+
     employee1.IntroduceYourself();
 
-    Employee employee2;
-    employee2.Name = "John";
-    employee2.Company = "Amazon";
-    employee2.Age = 35;
+    Employee employee2("John", "Amazon", 35);
+
     employee2.IntroduceYourself();
 }
