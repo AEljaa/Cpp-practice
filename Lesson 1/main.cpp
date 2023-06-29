@@ -8,7 +8,15 @@ using namespace std;
 // friends of a class are functions or other classes that are granted access to private and protected members of the class
 //3. Protected - can be accessed by members and friends of the class, but not from derived classes
 // derived classes are classes that inherit from a base class (parent class) 
-class Employee{
+
+
+//Abstract class - a class that has at least one pure virtual function
+class AbstractEmployee{
+    //pure virtual function
+    //the 0 means that this function is pure virtual
+    virtual void AskForPromotion() = 0;
+};
+class Employee:AbstractEmployee{
 private:
     //attributes
     string Name;
@@ -65,6 +73,15 @@ public:
         cout << "Company - " << Company << endl;
         cout << "Age - " << Age << endl;
     }
+
+    void AskForPromotion(){
+        if(Age > 30){
+            cout << Name << " got promoted!" << endl;
+        }
+        else{
+            cout << Name << ", sorry no promotion for you!" << endl;
+        }
+    }
 };
 
 int main()
@@ -72,15 +89,11 @@ int main()
     //There are 4 most important principles in OOP (Object Oriented Programming):
     //1. Encapsulation - the idea of wrapping data and code together as a single unit (class)
     //2. Abstraction - the idea of hiding the details and complexity and showing only the essentials (public methods)
-    //3. Inheritance - the idea of a class inheriting the properties and methods of another class (parent class)
+    //3. Inheritance - the idea of a class (child class) inheriting the properties and methods of another class (parent class)
     //4. Polymorphism - the idea of using a single type of entity (method, operator or object) to represent different types in different scenarios (overloading)
 
     Employee employee1("AE", "Icl", 18);
-    employee1.IntroduceYourself();
-
     Employee employee2("John", "Amazon", 35);
-    employee2.IntroduceYourself();
-
-    employee1.setAge(15);
-    cout << employee1.getName() << " is " << employee1.getAge() << " years old." << endl;
+    employee1.AskForPromotion();
+    employee2.AskForPromotion();
 }
