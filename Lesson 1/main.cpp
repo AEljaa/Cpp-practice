@@ -84,6 +84,25 @@ public:
     }
 };
 
+
+//creating a child class of Employee called Developer,which inherits from Employee (all the attributes and methods of the Employee class
+class Developer:Employee{
+private:
+    string FavProgrammingLanguage;
+public:
+
+    Developer(string name, string company, int age, string favProgrammingLanguage):Employee(name, company, age)
+    {
+        FavProgrammingLanguage = favProgrammingLanguage;
+    }
+
+    void FixBug(){
+        cout << getName() << " fixed bug using " << FavProgrammingLanguage << endl;
+    }
+
+
+};
+
 int main()
 {
     //There are 4 most important principles in OOP (Object Oriented Programming):
@@ -94,6 +113,8 @@ int main()
 
     Employee employee1("AE", "Icl", 18);
     Employee employee2("John", "Amazon", 35);
+    Developer d = Developer("Jack", "Google", 25, "C++");
+    d.FixBug();
     employee1.AskForPromotion();
     employee2.AskForPromotion();
 }
