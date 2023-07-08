@@ -5,6 +5,7 @@ using namespace std;
 void PrintString(string* str){
     cout << *str << endl;
 }
+
 //In this function we are passing the string as a reference
 void PrintString2(string& str){
 // a reference is like a pointer but with limiations
@@ -14,6 +15,7 @@ void PrintString2(string& str){
 
 
 int main(){
+    //refernes can be of all types
     string blegh ="Hey";
     //this & is the address of operator
     PrintString(&blegh);
