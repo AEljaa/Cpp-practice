@@ -58,15 +58,15 @@ public:
             std::cin>>input;
             std::cin.ignore();
             //translate to 0 based index used by the board
-            input--;
+            input-=1;
             //check if the move is valid and if it is, set the square to the current player
-            if(input < 0 || input >= _board.GetTotalSquares() || _board.GetSquare(input) != BoardSquare::EMPTY){
+            if(input < 0 || input > _board.GetTotalSquares() || _board.GetSquare(input) != BoardSquare::EMPTY){
                 std::cout<<"Invalid move!"<<std::endl;
                 continue;
             }
             _board.SetSquare(input, currentPlayer == WinningPlayer::X ? BoardSquare::X : BoardSquare::O);
             //switch player for next turn
-            currentPlayer = (currentPlayer == WinningPlayer::X) ? WinningPlayer::O : WinningPlayer::X;
+            currentPlayer = currentPlayer == WinningPlayer::X ? WinningPlayer::O : WinningPlayer::X;
         }
          return winningPlayer;
     }
@@ -75,7 +75,7 @@ private:
         for (auto i = 1; i <= _board.GetTotalSquares(); i++) {
             std::cout << GetSquareSymbol(i, _board.GetSquare(i-1))<< " "<<std::endl;
             if ((i % _board.GetWidth()) == 0) {
-                std::cout << std::endl;
+                std::cout << "\n";
             }
         }
     }

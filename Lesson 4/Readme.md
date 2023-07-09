@@ -1,2 +1,2 @@
-C++ Initialization list for reference variables
+C++ Initialization lists
 =================================================
