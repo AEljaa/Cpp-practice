@@ -4,7 +4,7 @@ using namespace std;
 
 
 
-const int gridTraveler(int x,int y,map<pair<int, int>, int> memo) {
+const int gridTraveler(int x,int y,map<pair<int, int>, int>& memo) {
     //if we have already computed the value, return it
     if(memo[{x,y}]){
         return memo[{x,y}];
