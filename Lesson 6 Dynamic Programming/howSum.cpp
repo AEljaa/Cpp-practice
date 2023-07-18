@@ -1,8 +1,8 @@
 #include <iostream>
-#include <unordered_map>
+#include <map>
 #include <vector>
 
-std::vector<int> howSum(int target, std::vector<int>& arr, std::unordered_map<int, std::vector<int>>& memo) {
+std::vector<int> howSum(int target, std::vector<int>& arr, std::map<int, std::vector<int>>& memo) {
     if (memo.count(target) > 0) {
         return memo[target];
     }
@@ -25,7 +25,7 @@ std::vector<int> howSum(int target, std::vector<int>& arr, std::unordered_map<in
 }
 
 int main() {
-    std::unordered_map<int, std::vector<int>> memo;
+    std::map<int, std::vector<int>> memo;
     std::vector<int> arr = {6, 34, 45};
     std::vector<int> result = howSum(10, arr, memo);
     for (int num : result) {
