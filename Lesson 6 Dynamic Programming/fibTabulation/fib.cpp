@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-
 
 const int fib(int &n){
 /* Declare an array to store Fibonacci numbers. */
